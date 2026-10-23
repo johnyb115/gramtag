@@ -29,6 +29,8 @@
 <link rel="preload" href="/fonts/archivo-condensedblack.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/site.css">
 <script>
+  // The visitor's own light/dark choice, if they made one (else the device's).
+  try { const theme = localStorage.getItem("theme"); if (theme) document.documentElement.dataset.theme = theme; } catch (e) {}
   // Opened from a home-screen icon: go straight to the app.
   if (matchMedia("(display-mode: standalone)").matches || navigator.standalone) location.replace("/app/");
 </script>
@@ -42,6 +44,7 @@
         <li><a href="#how">How it works</a></li>
         <li><a href="#keeps">What it keeps</a></li>
         <li><a href="#privacy">Privacy</a></li>
+        <li class="keep"><button type="button" class="theme" data-to-dark="Switch to dark" data-to-light="Switch to light" aria-label="Switch to dark"><span class="moon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span><span class="sun"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span></button></li>
         <li class="keep"><a class="lang" href="/cs/" hreflang="cs" lang="cs">Čeština</a></li>
       </ul>
     </nav>
@@ -181,6 +184,19 @@
 </footer>
 
 <script>
+  // Light/dark switch: shows the mode it switches to.
+  (function () {
+    const button = document.querySelector(".theme");
+    const dark = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+    const label = () => button.setAttribute("aria-label", dark() ? button.dataset.toLight : button.dataset.toDark);
+    label();
+    button.addEventListener("click", () => {
+      const theme = dark() ? "light" : "dark";
+      document.documentElement.dataset.theme = theme;
+      try { localStorage.setItem("theme", theme); } catch (e) {}
+      label();
+    });
+  })();
   // The example plates: each person's share of the cooked pot follows their
   // share of the raw portions, as in the app.
   (function () {
