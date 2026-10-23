@@ -2,6 +2,7 @@
    tags in Price-Tag Yellow, which prints only on results (see DESIGN.md). */
 
 @font-face { font-family: Archivo; font-weight: 400; font-display: swap; src: url(/fonts/archivo-regular.woff2) format("woff2"); }
+@font-face { font-family: Archivo; font-weight: 600; font-display: swap; src: url(/fonts/archivo-semibold.woff2) format("woff2"); }
 @font-face { font-family: Archivo; font-weight: 700; font-display: swap; src: url(/fonts/archivo-bold.woff2) format("woff2"); }
 @font-face { font-family: Archivo; font-weight: 800; font-display: swap; src: url(/fonts/archivo-extrabold.woff2) format("woff2"); }
 @font-face { font-family: Archivo; font-weight: 900; font-display: swap; src: url(/fonts/archivo-black.woff2) format("woff2"); }
@@ -91,7 +92,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; 
 .links a { text-decoration: none; padding: 12px 0; }
 .links a:hover { text-decoration: underline; }
 .theme {
-  width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: var(--ink);
+  width: 48px; height: 48px; border: 0; border-radius: 8px; background: transparent; color: var(--ink);
   display: grid; place-items: center; cursor: pointer;
 }
 .theme:hover { background: var(--well); }
@@ -186,13 +187,13 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; 
 .stepper { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
 .stepper .name { font-weight: 700; font-size: 14px; width: 92px; }
 .stepper button {
-  width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: var(--ink);
+  width: 48px; height: 48px; border: 0; border-radius: 8px; background: transparent; color: var(--ink);
   display: grid; place-items: center; cursor: pointer;
 }
 .stepper button svg { width: 24px; height: 24px; }
 .stepper button:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
 .stepper output {
-  flex: 1; min-width: 92px; height: 44px; border-radius: 8px; background: var(--ground);
+  flex: 1; min-width: 92px; height: 48px; border-radius: 8px; background: var(--ground);
   display: flex; align-items: baseline; justify-content: center; padding-top: 8px;
   font-size: 24px;
 }
