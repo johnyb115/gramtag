@@ -1,31 +1,214 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <!-- Replaced by `flutter build web --base-href`. -->
-  <base href="/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Gramtag: how many grams go on each plate, worked out from your own portions.">
-  <meta name="theme-color" content="#FFFEF8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#191812" media="(prefers-color-scheme: dark)">
-
-  <!-- Add to Home Screen on iPhone -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Gramtag">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="manifest" href="manifest.json">
-  <title>Gramtag</title>
-  <style>
-    /* The app's ground colour while Flutter loads, so there is no flash. */
-    html, body { margin: 0; background: #FFFEF8; }
-    @media (prefers-color-scheme: dark) { html, body { background: #191812; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gramtag – how many grams go on each plate</title>
+<meta name="description" content="Weigh the cooked food and Gramtag shows how many grams go on each plate, from the portion sizes you follow. No account, in your browser and on Android.">
+<link rel="canonical" href="https://gramtag.eu/">
+<link rel="alternate" hreflang="en" href="https://gramtag.eu/">
+<link rel="alternate" hreflang="cs" href="https://gramtag.eu/cs/">
+<link rel="alternate" hreflang="x-default" href="https://gramtag.eu/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gramtag">
+<meta property="og:title" content="Gramtag – how many grams go on each plate">
+<meta property="og:description" content="Weigh the cooked food and Gramtag shows how many grams go on each plate, from the portion sizes you follow. No account, in your browser and on Android.">
+<meta property="og:url" content="https://gramtag.eu/">
+<meta property="og:image" content="https://gramtag.eu/img/og-en.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFEF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191812" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Gramtag">
+<link rel="manifest" href="/app/manifest.json">
+<link rel="preload" href="/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/archivo-condensedblack.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<script>
+  // Opened from a home-screen icon: go straight to the app.
+  if (matchMedia("(display-mode: standalone)").matches || navigator.standalone) location.replace("/app/");
+</script>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" fill="#FFD21F"/><circle cx="54" cy="54" r="27" fill="#FFFFFF" stroke="#141414" stroke-width="5"/><circle cx="54" cy="54" r="18.5" fill="none" stroke="#B9B7B0" stroke-width="1.6"/><line x1="61" y1="29.5" x2="61" y2="78.5" stroke="#141414" stroke-width="4.5"/></svg>Gramtag</a>
+    <nav aria-label="Page">
+      <ul class="links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#keeps">What it keeps</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li class="keep"><a class="lang" href="/cs/" hreflang="cs" lang="cs">Čeština</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>How many grams go on each plate.</h1>
+        <p class="sub">You follow a meal plan and cook one pot, for yourself or for two. Weigh the food after cooking, and Gramtag prints each person&#x27;s grams on a tag.</p>
+        <div class="ctas">
+        <a class="btn btn-ink" href="/app/">Open Gramtag in your browser</a>
+        <a class="btn btn-out" href="/test/">Join the Android test</a>
+      </div>
+        <p class="small-print">No account · English and Czech</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="rail"></div>
+      <div class="lip"><div class="wrap">
+      <div class="hanging"><div class="tag plate">
+        <div class="who">Anna</div>
+        <div class="portions">1 portion</div>
+        <hr>
+        <span class="grams num" data-plate="p1-meat">337<span class="unit"> g</span></span>
+        <div class="food">Chicken</div>
+        <span class="grams num" data-plate="p1-side">503<span class="unit"> g</span></span>
+        <div class="food">Potatoes</div>
+      </div></div>
+      <div class="hanging"><div class="tag plate">
+        <div class="who">Tom</div>
+        <div class="portions">1 portion</div>
+        <hr>
+        <span class="grams num" data-plate="p2-meat">175<span class="unit"> g</span></span>
+        <div class="food">Chicken</div>
+        <span class="grams num" data-plate="p2-side">287<span class="unit"> g</span></span>
+        <div class="food">Potatoes</div>
+      </div></div>
+      <div class="hanging info"><div class="label-tag"><span class="stripe">USE SOON</span><b>Freezer</b><p>Beef goulash, 2 boxes, frozen 3 months ago</p></div></div>
+      <div class="hanging info"><div class="label-tag"><b>Planner</b><span class="big num">2 + 4</span><p>portions from a 1 100 g pack of meat</p></div></div>
+      <div class="try">
+        <p><b>Try it: change the cooked weight.</b></p>
+        <div class="stepper" data-key="meat">
+          <span class="name">Chicken</span>
+          <button type="button" data-step="-10" aria-label="Less: Chicken"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+          <output class="num" aria-live="polite">512<span class="unit"> g</span></output>
+          <button type="button" data-step="10" aria-label="More: Chicken"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+        </div>
+        <div class="stepper" data-key="side">
+          <span class="name">Potatoes</span>
+          <button type="button" data-step="-10" aria-label="Less: Potatoes"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+          <output class="num" aria-live="polite">790<span class="unit"> g</span></output>
+          <button type="button" data-step="10" aria-label="More: Potatoes"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+        </div>
+        <p class="muted">Example plates: Anna eats 250 g of raw chicken and 350 g of potatoes per portion, Tom 130 g and 200 g.</p>
+      </div>
+      </div></div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap"><div class="ruled">
+      <h2>Three steps at the stove</h2>
+      <p class="lead">Gramtag does not plan your meals or tell you how much to eat. It takes the portions you already follow and does the maths after cooking.</p>
+      <ol class="steps">
+      <li><span class="n num">1</span><h3>Set your portions once</h3><p>Raw grams per portion for each person and each food, straight from your meal plan.</p></li>
+      <li><span class="n num">2</span><h3>Cook and weigh</h3><p>Weigh all the cooked meat and side. In the pot is fine: Gramtag knows your pots and takes their weight off.</p></li>
+      <li><span class="n num">3</span><h3>Read each plate</h3><p>Each person&#x27;s grams print on a tag, big enough to read from the counter while you serve.</p></li>
+      </ol>
+    </div></div>
+  </section>
+
+  <section id="screens">
+    <div class="wrap"><div class="ruled"><h2>On your phone and on your computer</h2></div></div>
+    <div class="goods"><ul>
+      <li><div class="stand"><img src="/img/en-01-calculator.webp" width="540" height="1080" loading="lazy" alt="Gramtag screenshot: Calculator"></div>
+        <p class="shelf-label">Calculator<span>The plates pinned under the form</span></p></li>
+      <li><div class="stand"><img src="/img/en-03-freezer.webp" width="540" height="1080" loading="lazy" alt="Gramtag screenshot: Freezer"></div>
+        <p class="shelf-label">Freezer<span>Oldest boxes first</span></p></li>
+      <li><div class="stand"><img src="/img/en-05-planner.webp" width="540" height="1080" loading="lazy" alt="Gramtag screenshot: Planner"></div>
+        <p class="shelf-label">Planner<span>Splitting a big pack</span></p></li>
+      <li><div class="stand"><img src="/img/en-04-history.webp" width="540" height="1080" loading="lazy" alt="Gramtag screenshot: History"></div>
+        <p class="shelf-label">History<span>Every dinner, kept</span></p></li>
+    </ul></div>
+  </section>
+
+  <section id="keeps">
+    <div class="wrap"><div class="ruled">
+      <h2>What else it keeps</h2>
+      <ul class="keeps">
+      <li><h3>Freezer</h3><p>Save leftover portions as boxes and see who each box is for. Take out a whole box or a single portion. Food frozen for three months gets a stripe, and a reminder if you want one.</p><div class="fact"><span class="stripe">USE SOON</span></div></li>
+      <li><h3>Planner</h3><p>Bought a big pack of meat? Enter its weight and Gramtag suggests how many portions each person gets and how much is left over.</p><div class="fact"><span class="num">1 100 g</span>2 + 4 portions</div></li>
+      <li><h3>History</h3><p>Every calculation is kept, so you can look back at what you cooked and how it was split.</p></li>
+      <li><h3>Your pots</h3><p>Store each pot&#x27;s empty weight once and weigh the food right in it.</p></li>
+      <li><h3>Shared freezer</h3><p>Two Android phones, one freezer: pair them with a one-time code, and whatever one of you freezes or takes out shows up on the other.</p></li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap"><div class="ruled">
+      <h2>Your data stays with you</h2>
+      <ul class="promises">
+      <li><b>No account</b>Nothing to sign up for. Open it and start.</li>
+      <li><b>Stored on your device</b>Your portions, history and freezer stay in your phone or browser.</li>
+      <li><b>Sharing only when you ask</b>A shared freezer is kept on Google Firebase servers in the EU. Nothing else leaves your device.</li>
+      <li><b>No ads</b>Gramtag shows no ads and does not track you.</li>
+      </ul>
+      <a class="privacy-link" href="https://johnyb115.github.io/portionix_legal/">Read the privacy policy</a>
+    </div></div>
+  </section>
+
+  <section class="close">
+    <div class="wrap"><div class="ruled">
+      <h2>Tonight&#x27;s plates are one weigh away.</h2>
+      <div class="ctas">
+        <a class="btn btn-ink" href="/app/">Open Gramtag in your browser</a>
+        <a class="btn btn-out" href="/test/">Join the Android test</a>
+      </div>
+    </div></div>
+    <div class="shelf"><div class="rail"></div><div class="lip"></div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li>Gramtag · made in Czechia</li>
+      <li><a href="https://johnyb115.github.io/portionix_legal/">Privacy policy</a></li>
+      <li><a href="mailto:gramtag0@gmail.com">Contact: gramtag0@gmail.com</a></li>
+      <li><a href="/cs/" hreflang="cs" lang="cs">Čeština</a></li>
+    </ul>
+    <p>Gramtag does not make meal plans or recommend portion sizes, and does not give medical, nutritional or health advice. It works with the amounts you set.</p>
+  </div>
+</footer>
+
+<script>
+  // The example plates: each person's share of the cooked pot follows their
+  // share of the raw portions, as in the app.
+  (function () {
+    const raw = { meat: [250, 130], side: [350, 200] };
+    const cooked = { meat: 512, side: 790 };
+    const unit = '<span class="unit">\u00a0g</span>';
+    const show = (el, value) => {
+      if (el.dataset.value === String(value)) return;
+      el.dataset.value = value;
+      el.innerHTML = value + unit;
+      el.classList.remove("reprint"); void el.offsetWidth; el.classList.add("reprint");
+    };
+    const render = () => {
+      for (const part of ["meat", "side"]) {
+        const [a, b] = raw[part];
+        show(document.querySelector(`[data-plate="p1-${part}"]`), Math.round(cooked[part] * a / (a + b)));
+        show(document.querySelector(`[data-plate="p2-${part}"]`), Math.round(cooked[part] * b / (a + b)));
+        show(document.querySelector(`.stepper[data-key="${part}"] output`), cooked[part]);
+      }
+    };
+    document.querySelectorAll(".stepper").forEach((s) => s.addEventListener("click", (ev) => {
+      const step = Number(ev.target.closest("button")?.dataset.step || 0);
+      if (!step) return;
+      const part = s.dataset.key;
+      cooked[part] = Math.max(0, Math.min(5000, cooked[part] + step));
+      render();
+    }));
+  })();
+</script>
 </body>
 </html>

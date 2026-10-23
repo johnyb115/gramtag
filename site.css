@@ -1,0 +1,274 @@
+/* gramtag.eu: the shelf. One ink on shelf ground, bin wells, and the plate
+   tags in Price-Tag Yellow, which prints only on results (see DESIGN.md). */
+
+@font-face { font-family: Archivo; font-weight: 400; font-display: swap; src: url(/fonts/archivo-regular.woff2) format("woff2"); }
+@font-face { font-family: Archivo; font-weight: 700; font-display: swap; src: url(/fonts/archivo-bold.woff2) format("woff2"); }
+@font-face { font-family: Archivo; font-weight: 800; font-display: swap; src: url(/fonts/archivo-extrabold.woff2) format("woff2"); }
+@font-face { font-family: Archivo; font-weight: 900; font-display: swap; src: url(/fonts/archivo-black.woff2) format("woff2"); }
+@font-face { font-family: "Archivo Condensed"; font-weight: 700; font-display: swap; src: url(/fonts/archivo-condensedbold.woff2) format("woff2"); }
+@font-face { font-family: "Archivo Condensed"; font-weight: 900; font-display: swap; src: url(/fonts/archivo-condensedblack.woff2) format("woff2"); }
+
+:root {
+  --ground: #FFFEF8;
+  --ink: #141414;
+  --muted: #5A5852;
+  --well: #F2EAC9;
+  --hairline: #E4D69E;
+  --rule: #141414;
+  --tag: #FFD21F;
+  --on-tag: #141414;
+  --sale: #D3141A;
+  --on-sale: #FFFFFF;
+  --shadow: 0 2px 8px rgba(0, 0, 0, .18);
+  --gutter: clamp(20px, 4.5vw, 64px);
+  --max: 1240px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #191812;
+    --ink: #F2F1EC;
+    --muted: #ADABA4;
+    --well: #353224;
+    --hairline: #564E33;
+    --rule: #8F8D86;
+    --sale: #FF5D52;
+    --on-sale: #141414;
+    --shadow: 0 2px 10px rgba(0, 0, 0, .55);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scrollbar-color: var(--muted) var(--ground); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 17px/1.5 Archivo, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--ink); color: var(--ground); }
+
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+
+.num {
+  font-family: "Archivo Condensed", Archivo, sans-serif;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -.5px;
+}
+.unit { font-family: Archivo, sans-serif; font-weight: 700; letter-spacing: 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* --- Top bar: the app bar, closed by the 2 px rule. -------------------- */
+
+.top { border-bottom: 2px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; letter-spacing: -.3px; text-decoration: none; }
+.brand svg { width: 36px; height: 36px; border-radius: 8px; flex: none; }
+.links { display: flex; align-items: center; gap: 28px; list-style: none; font-weight: 700; font-size: 15px; }
+.links a { text-decoration: none; padding: 12px 0; }
+.links a:hover { text-decoration: underline; }
+.lang { border: 1.5px solid var(--ink); border-radius: 8px; padding: 8px 12px !important; }
+.lang:hover { background: var(--ink); color: var(--ground); text-decoration: none !important; }
+
+/* --- Buttons: ink, square-shouldered, 56 px main action. ---------------- */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 0 26px; border-radius: 8px;
+  font: 700 17px/1.2 Archivo, sans-serif; text-decoration: none; text-align: center;
+  transition: transform .15s cubic-bezier(.2, .8, .2, 1), background-color .15s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-ink { background: var(--ink); color: var(--ground); border: 2px solid var(--ink); }
+.btn-ink:hover { background: color-mix(in srgb, var(--ink) 86%, var(--ground)); }
+.btn-out { border: 2px solid var(--ink); color: var(--ink); background: var(--ground); }
+.btn-out:hover { background: var(--well); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* --- Hero: the headline over the shelf rail with tags hanging off it. --- */
+
+.hero { padding-top: clamp(40px, 7vh, 72px); }
+.hero-copy { padding-right: 400px; }
+.hero h1 {
+  font-weight: 900; font-size: clamp(44px, 5.2vw, 76px); line-height: .98;
+  letter-spacing: -.03em; max-width: 15ch; text-wrap: balance;
+}
+.hero .sub { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.45; max-width: 36em; margin: 22px 0 30px; text-wrap: pretty; }
+.ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.small-print { margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--muted); }
+
+.shelf { position: relative; margin-top: clamp(40px, 6vh, 64px); }
+.rail { height: 14px; background: var(--rule); }
+.lip { background: var(--well); border-bottom: 2px solid var(--rule); }
+.lip .wrap { position: relative; display: flex; align-items: flex-start; gap: 24px; padding-bottom: 40px; min-height: 120px; }
+
+/* A tag hangs on a short ink string from the rail. */
+.hanging { position: relative; padding-top: 26px; transform-origin: 50% 0; }
+.hanging::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 26px; background: var(--rule); }
+
+.tag {
+  position: relative; background: var(--tag); color: var(--on-tag);
+  border-radius: 6px; box-shadow: var(--shadow); padding: 14px 18px 18px;
+}
+.tag::after { /* the punched hole, showing the shelf behind */
+  content: ""; position: absolute; top: 12px; right: 12px;
+  width: 10px; height: 10px; border-radius: 50%; background: var(--well);
+}
+.tag .who { font-weight: 800; font-size: 16px; letter-spacing: .8px; text-transform: uppercase; }
+.tag .portions { font-size: 13px; margin: 2px 0 10px; }
+.tag hr { border: 0; border-top: 1.5px solid var(--on-tag); margin-bottom: 10px; }
+.plate { width: clamp(150px, 19.5vw, 280px); }
+.plate .grams { font-size: clamp(44px, 4.6vw, 66px); line-height: .95; display: block; }
+.plate .grams .unit { font-size: .4em; margin-left: .12em; }
+.plate .food { font-weight: 600; font-size: 15px; margin: 3px 0 12px; }
+.plate .food:last-child { margin-bottom: 0; }
+
+/* Shelf labels: the quieter tags, printed in ink on the ground. */
+.label-tag {
+  width: 230px; margin-top: 54px; background: var(--ground); border: 1.5px solid var(--ink);
+  border-radius: 6px; padding: 14px 16px 16px; position: relative;
+}
+.label-tag::after {
+  content: ""; position: absolute; top: 12px; right: 12px;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--well); border: 1.5px solid var(--ink);
+}
+.label-tag b { display: block; font-size: 16px; margin-bottom: 6px; }
+.label-tag p { font-size: 14px; line-height: 1.35; }
+.label-tag .big { font-size: 42px; line-height: 1; display: block; margin-bottom: 4px; }
+.stripe {
+  display: inline-block; background: var(--sale); color: var(--on-sale);
+  font-weight: 800; font-size: 11px; letter-spacing: .8px; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;
+}
+
+/* The example control on the shelf lip: change the cooked weight. */
+.try {
+  position: absolute; right: var(--gutter); bottom: calc(100% + 14px); width: 340px;
+  background: var(--well); border-radius: 8px 8px 0 0; padding: 18px 18px 16px;
+}
+.try p { font-size: 14px; line-height: 1.4; color: var(--ink); margin-bottom: 10px; }
+.try .muted { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
+.stepper { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+.stepper .name { font-weight: 700; font-size: 14px; width: 92px; }
+.stepper button {
+  width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: var(--ink);
+  display: grid; place-items: center; cursor: pointer;
+}
+.stepper button svg { width: 24px; height: 24px; }
+.stepper button:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.stepper output {
+  flex: 1; min-width: 92px; height: 44px; border-radius: 8px; background: var(--ground);
+  display: flex; align-items: baseline; justify-content: center; padding-top: 8px;
+  font-size: 24px;
+}
+.stepper output .unit { font-size: 13px; margin-left: 3px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .grams.reprint, output.reprint { animation: reprint 90ms linear; }
+  @keyframes reprint { from { opacity: .2; transform: translateY(3px); } }
+  .hanging { animation: hang 900ms cubic-bezier(.16, 1, .3, 1) both; }
+  .hanging:nth-child(2) { animation-delay: 70ms; }
+  .hanging:nth-child(3) { animation-delay: 140ms; }
+  .hanging:nth-child(4) { animation-delay: 210ms; }
+  @keyframes hang {
+    0% { transform: rotate(-5deg); }
+    45% { transform: rotate(2.5deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0); }
+  }
+}
+
+/* --- Ruled sections. ----------------------------------------------------- */
+
+section { padding: clamp(56px, 8vw, 104px) 0 0; }
+.ruled { border-top: 2px solid var(--rule); padding-top: 18px; }
+.close .ruled { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+h2 { font-weight: 900; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; letter-spacing: -.025em; max-width: 18ch; text-wrap: balance; }
+.lead { font-size: 19px; line-height: 1.5; max-width: 38em; margin-top: 14px; color: var(--ink); }
+
+.steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; border-top: 1px solid var(--hairline); }
+.steps li { padding: 24px 28px 8px 0; }
+.steps li + li { border-left: 1px solid var(--hairline); padding-left: 28px; }
+.steps .n { font-size: 64px; line-height: .9; display: block; margin-bottom: 14px; }
+.steps h3 { font-size: 21px; font-weight: 800; letter-spacing: -.2px; margin-bottom: 6px; }
+.steps p { font-size: 16px; line-height: 1.5; max-width: 30em; }
+
+/* Screenshots standing on one shelf board, each with its shelf label. */
+.goods { --pad: clamp(10px, 1.6vw, 22px); margin-top: 40px; }
+.goods ul {
+  list-style: none; display: flex; align-items: flex-start; overflow-x: auto; scroll-snap-type: x mandatory;
+  max-width: var(--max); margin: 0 auto; padding: 0 calc(var(--gutter) - var(--pad)); scrollbar-width: thin;
+}
+.goods li { flex: 0 0 auto; padding: 0 var(--pad); scroll-snap-align: start; }
+.goods .stand { margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad); border-bottom: 14px solid var(--rule); }
+.goods img {
+  display: block; width: clamp(180px, calc((min(100vw, var(--max)) - 2 * var(--gutter) + 2 * var(--pad)) / 4 - 2 * var(--pad)), 250px); height: auto; aspect-ratio: 1 / 2;
+  border-radius: 16px 16px 0 0; border: 2px solid var(--ink); border-bottom: 0; background: var(--well);
+}
+.goods .shelf-label { margin-top: 14px; font-weight: 800; font-size: 15px; }
+.goods .shelf-label span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); max-width: 22ch; }
+
+/* What it keeps: ruled rows, like the app's Settings groups. */
+.keeps { list-style: none; margin-top: 36px; }
+.keeps li { display: grid; grid-template-columns: 240px 1fr 220px; gap: 32px; align-items: start; padding: 26px 0; border-top: 1px solid var(--hairline); }
+.keeps li:last-child { border-bottom: 1px solid var(--hairline); }
+.keeps h3 { font-size: 22px; font-weight: 800; letter-spacing: -.2px; }
+.keeps p { font-size: 17px; line-height: 1.5; max-width: 34em; }
+.keeps .fact { justify-self: end; text-align: right; font-size: 14px; color: var(--muted); }
+.keeps .fact .num { display: block; font-size: 38px; line-height: 1; color: var(--ink); }
+
+/* Privacy: plain statements under the rule. */
+.promises { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 32px; }
+.promises li { padding: 18px 0; border-top: 1px solid var(--hairline); font-size: 18px; line-height: 1.45; }
+.promises li b { display: block; font-size: 19px; font-weight: 800; }
+.privacy-link { display: inline-block; margin-top: 24px; font-weight: 700; }
+
+/* The closing shelf. */
+.close { padding-bottom: 0; }
+.close h2 { max-width: 14ch; }
+.close .shelf { margin-top: 48px; }
+
+footer { padding: 32px 0 48px; font-size: 15px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 28px; font-weight: 700; }
+footer p { color: var(--muted); max-width: 52em; }
+
+/* --- Narrower screens. ---------------------------------------------------- */
+
+@media (max-width: 1080px) {
+  .hero-copy { padding-right: 340px; }
+  .try { width: 300px; }
+  .hanging.info { display: none; }
+  .keeps li { grid-template-columns: 1fr; gap: 8px; }
+  .keeps .fact { justify-self: start; text-align: left; }
+}
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .links li:not(.keep) { display: none; }
+  .top .wrap { height: 64px; }
+  .brand { font-size: 20px; }
+  .ctas .btn { flex: 1 1 100%; }
+  .lip .wrap { flex-wrap: wrap; gap: 12px; padding-bottom: 28px; }
+  .lip .hanging { flex: 1 1 0; }
+  .plate { width: auto; padding: 12px 14px 14px; }
+  .plate .grams { font-size: 46px; }
+  .tag .who { font-size: 14px; }
+  .hero-copy { padding-right: 0; }
+  .try { position: static; width: auto; flex: 1 1 100%; margin-top: 8px; border-radius: 8px; background: var(--ground); }
+  .try .stepper output { background: var(--well); }
+  .steps { grid-template-columns: 1fr; }
+  .steps li, .steps li + li { border-left: 0; padding: 20px 0 4px; border-top: 1px solid var(--hairline); }
+  .steps li:first-child { border-top: 0; }
+  .promises { grid-template-columns: 1fr; }
+  .goods img { width: 58vw; max-width: 230px; }
+}

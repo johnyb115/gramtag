@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gramtag – kolik gramů patří na který talíř</title>
+<meta name="description" content="Zvažte uvařené jídlo a Gramtag ukáže, kolik gramů patří na který talíř, podle porcí, které dodržujete. Bez účtu, v prohlížeči i na Androidu.">
+<link rel="canonical" href="https://gramtag.eu/cs/">
+<link rel="alternate" hreflang="en" href="https://gramtag.eu/">
+<link rel="alternate" hreflang="cs" href="https://gramtag.eu/cs/">
+<link rel="alternate" hreflang="x-default" href="https://gramtag.eu/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gramtag">
+<meta property="og:title" content="Gramtag – kolik gramů patří na který talíř">
+<meta property="og:description" content="Zvažte uvařené jídlo a Gramtag ukáže, kolik gramů patří na který talíř, podle porcí, které dodržujete. Bez účtu, v prohlížeči i na Androidu.">
+<meta property="og:url" content="https://gramtag.eu/cs/">
+<meta property="og:image" content="https://gramtag.eu/img/og-cs.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFEF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191812" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Gramtag">
+<link rel="manifest" href="/app/manifest.json">
+<link rel="preload" href="/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/archivo-condensedblack.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<script>
+  // Opened from a home-screen icon: go straight to the app.
+  if (matchMedia("(display-mode: standalone)").matches || navigator.standalone) location.replace("/app/");
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" fill="#FFD21F"/><circle cx="54" cy="54" r="27" fill="#FFFFFF" stroke="#141414" stroke-width="5"/><circle cx="54" cy="54" r="18.5" fill="none" stroke="#B9B7B0" stroke-width="1.6"/><line x1="61" y1="29.5" x2="61" y2="78.5" stroke="#141414" stroke-width="4.5"/></svg>Gramtag</a>
+    <nav aria-label="Stránka">
+      <ul class="links">
+        <li><a href="#how">Jak to funguje</a></li>
+        <li><a href="#keeps">Co dalšího umí</a></li>
+        <li><a href="#privacy">Soukromí</a></li>
+        <li class="keep"><a class="lang" href="/" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Kolik gramů patří na který talíř.</h1>
+        <p class="sub">Držíte jídelníček a vaříte jeden hrnec, pro sebe nebo pro dva. Po uvaření jídlo zvažte a Gramtag vytiskne gramy každého na cenovku.</p>
+        <div class="ctas">
+        <a class="btn btn-ink" href="/app/">Otevřít Gramtag v prohlížeči</a>
+        <a class="btn btn-out" href="/test/">Testovat na Androidu</a>
+      </div>
+        <p class="small-print">Bez účtu · česky i anglicky</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="rail"></div>
+      <div class="lip"><div class="wrap">
+      <div class="hanging"><div class="tag plate">
+        <div class="who">Jana</div>
+        <div class="portions">1 porce</div>
+        <hr>
+        <span class="grams num" data-plate="p1-meat">337<span class="unit"> g</span></span>
+        <div class="food">Kuře</div>
+        <span class="grams num" data-plate="p1-side">503<span class="unit"> g</span></span>
+        <div class="food">Brambory</div>
+      </div></div>
+      <div class="hanging"><div class="tag plate">
+        <div class="who">Petr</div>
+        <div class="portions">1 porce</div>
+        <hr>
+        <span class="grams num" data-plate="p2-meat">175<span class="unit"> g</span></span>
+        <div class="food">Kuře</div>
+        <span class="grams num" data-plate="p2-side">287<span class="unit"> g</span></span>
+        <div class="food">Brambory</div>
+      </div></div>
+      <div class="hanging info"><div class="label-tag"><span class="stripe">SPOTŘEBOVAT BRZY</span><b>Mrazák</b><p>Hovězí guláš, 2 krabičky, zamraženo před 3 měsíci</p></div></div>
+      <div class="hanging info"><div class="label-tag"><b>Plánovač</b><span class="big num">2 + 4</span><p>porce z balení masa 1 100 g</p></div></div>
+      <div class="try">
+        <p><b>Zkuste to: změňte uvařenou hmotnost.</b></p>
+        <div class="stepper" data-key="meat">
+          <span class="name">Kuře</span>
+          <button type="button" data-step="-10" aria-label="Méně: Kuře"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+          <output class="num" aria-live="polite">512<span class="unit"> g</span></output>
+          <button type="button" data-step="10" aria-label="Více: Kuře"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+        </div>
+        <div class="stepper" data-key="side">
+          <span class="name">Brambory</span>
+          <button type="button" data-step="-10" aria-label="Méně: Brambory"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+          <output class="num" aria-live="polite">790<span class="unit"> g</span></output>
+          <button type="button" data-step="10" aria-label="Více: Brambory"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+        </div>
+        <p class="muted">Ukázkové talíře: Jana sní 250 g syrového kuřete a 350 g brambor na porci, Petr 130 g a 200 g.</p>
+      </div>
+      </div></div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap"><div class="ruled">
+      <h2>Tři kroky u plotny</h2>
+      <p class="lead">Gramtag vám nesestaví jídelníček ani neurčuje, kolik máte jíst. Vezme porce, které už dodržujete, a po uvaření za vás spočítá zbytek.</p>
+      <ol class="steps">
+      <li><span class="n num">1</span><h3>Jednou nastavte porce</h3><p>Syrové gramy na porci pro každého a pro každé jídlo, rovnou z vašeho jídelníčku.</p></li>
+      <li><span class="n num">2</span><h3>Uvařte a zvažte</h3><p>Zvažte všechno uvařené maso a přílohu. Klidně i v hrnci: Gramtag zná vaše nádobí a jeho hmotnost odečte.</p></li>
+      <li><span class="n num">3</span><h3>Podívejte se na talíře</h3><p>Gramy každého se vytisknou na cenovku, dost velké, abyste je přečetli od linky při servírování.</p></li>
+      </ol>
+    </div></div>
+  </section>
+
+  <section id="screens">
+    <div class="wrap"><div class="ruled"><h2>V telefonu i v počítači</h2></div></div>
+    <div class="goods"><ul>
+      <li><div class="stand"><img src="/img/cs-01-calculator.webp" width="540" height="1080" loading="lazy" alt="Snímek obrazovky Gramtagu: Kalkulačka"></div>
+        <p class="shelf-label">Kalkulačka<span>Talíře připnuté pod formulářem</span></p></li>
+      <li><div class="stand"><img src="/img/cs-03-freezer.webp" width="540" height="1080" loading="lazy" alt="Snímek obrazovky Gramtagu: Mrazák"></div>
+        <p class="shelf-label">Mrazák<span>Nejstarší krabičky nahoře</span></p></li>
+      <li><div class="stand"><img src="/img/cs-05-planner.webp" width="540" height="1080" loading="lazy" alt="Snímek obrazovky Gramtagu: Plánovač"></div>
+        <p class="shelf-label">Plánovač<span>Rozdělení velkého balení</span></p></li>
+      <li><div class="stand"><img src="/img/cs-04-history.webp" width="540" height="1080" loading="lazy" alt="Snímek obrazovky Gramtagu: Historie"></div>
+        <p class="shelf-label">Historie<span>Každá večeře uložená</span></p></li>
+    </ul></div>
+  </section>
+
+  <section id="keeps">
+    <div class="wrap"><div class="ruled">
+      <h2>Co dalšího umí</h2>
+      <ul class="keeps">
+      <li><h3>Mrazák</h3><p>Uložte zbylé porce jako krabičky a uvidíte, pro koho je která. Vyndejte celou krabičku nebo jen jednu porci. Jídlo zamražené tři měsíce dostane pruh, a když chcete, i připomínku.</p><div class="fact"><span class="stripe">SPOTŘEBOVAT BRZY</span></div></li>
+      <li><h3>Plánovač</h3><p>Koupili jste velké balení masa? Zadejte jeho hmotnost a Gramtag navrhne, kolik porcí dostane každý a kolik zbude.</p><div class="fact"><span class="num">1 100 g</span>2 + 4 porce</div></li>
+      <li><h3>Historie</h3><p>Každý výpočet se uloží, takže se můžete podívat, co jste vařili a jak se to rozdělilo.</p></li>
+      <li><h3>Vaše nádobí</h3><p>Uložte si prázdnou hmotnost každého hrnce a jídlo važte rovnou v něm.</p></li>
+      <li><h3>Sdílený mrazák</h3><p>Dva telefony s Androidem, jeden mrazák: propojíte je jednorázovým kódem a co jeden z vás zamrazí nebo vyndá, uvidí i ten druhý.</p></li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap"><div class="ruled">
+      <h2>Vaše data zůstávají u vás</h2>
+      <ul class="promises">
+      <li><b>Žádný účet</b>Nic se nezakládá. Otevřete a začněte.</li>
+      <li><b>Uloženo ve vašem zařízení</b>Porce, historie i mrazák zůstávají ve vašem telefonu nebo prohlížeči.</li>
+      <li><b>Sdílení jen na požádání</b>Sdílený mrazák je uložený na serverech Google Firebase v EU. Nic jiného vaše zařízení neopustí.</li>
+      <li><b>Žádné reklamy</b>Gramtag nezobrazuje reklamy a nesleduje vás.</li>
+      </ul>
+      <a class="privacy-link" href="https://johnyb115.github.io/portionix_legal/">Zásady ochrany osobních údajů</a>
+    </div></div>
+  </section>
+
+  <section class="close">
+    <div class="wrap"><div class="ruled">
+      <h2>K dnešním talířům stačí jedno vážení.</h2>
+      <div class="ctas">
+        <a class="btn btn-ink" href="/app/">Otevřít Gramtag v prohlížeči</a>
+        <a class="btn btn-out" href="/test/">Testovat na Androidu</a>
+      </div>
+    </div></div>
+    <div class="shelf"><div class="rail"></div><div class="lip"></div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li>Gramtag · vyrobeno v Česku</li>
+      <li><a href="https://johnyb115.github.io/portionix_legal/">Ochrana soukromí</a></li>
+      <li><a href="mailto:gramtag0@gmail.com">Kontakt: gramtag0@gmail.com</a></li>
+      <li><a href="/" hreflang="en" lang="en">English</a></li>
+    </ul>
+    <p>Gramtag nesestavuje jídelníčky ani nedoporučuje velikost porcí a neposkytuje lékařské, výživové ani zdravotní rady. Pracuje s hodnotami, které si nastavíte.</p>
+  </div>
+</footer>
+
+<script>
+  // The example plates: each person's share of the cooked pot follows their
+  // share of the raw portions, as in the app.
+  (function () {
+    const raw = { meat: [250, 130], side: [350, 200] };
+    const cooked = { meat: 512, side: 790 };
+    const unit = '<span class="unit">\u00a0g</span>';
+    const show = (el, value) => {
+      if (el.dataset.value === String(value)) return;
+      el.dataset.value = value;
+      el.innerHTML = value + unit;
+      el.classList.remove("reprint"); void el.offsetWidth; el.classList.add("reprint");
+    };
+    const render = () => {
+      for (const part of ["meat", "side"]) {
+        const [a, b] = raw[part];
+        show(document.querySelector(`[data-plate="p1-${part}"]`), Math.round(cooked[part] * a / (a + b)));
+        show(document.querySelector(`[data-plate="p2-${part}"]`), Math.round(cooked[part] * b / (a + b)));
+        show(document.querySelector(`.stepper[data-key="${part}"] output`), cooked[part]);
+      }
+    };
+    document.querySelectorAll(".stepper").forEach((s) => s.addEventListener("click", (ev) => {
+      const step = Number(ev.target.closest("button")?.dataset.step || 0);
+      if (!step) return;
+      const part = s.dataset.key;
+      cooked[part] = Math.max(0, Math.min(5000, cooked[part] + step));
+      render();
+    }));
+  })();
+</script>
+</body>
+</html>
