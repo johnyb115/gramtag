@@ -269,6 +269,17 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: 
 footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 28px; font-weight: 700; }
 footer p { color: var(--muted); max-width: 52em; }
 
+/* The privacy policy: a page to read. */
+.prose { max-width: 760px; padding-top: clamp(32px, 6vw, 64px); padding-bottom: 32px; }
+.prose h1 { font-weight: 900; font-size: clamp(36px, 4.4vw, 56px); line-height: 1; letter-spacing: -.03em; margin-bottom: 24px; }
+.prose h2 { font-size: 24px; letter-spacing: -.01em; max-width: none; margin: 40px 0 10px; padding-top: 16px; border-top: 2px solid var(--rule); }
+.prose p, .prose li { font-size: 17px; line-height: 1.6; max-width: 68ch; }
+.prose p + p { margin-top: 12px; }
+.prose ul { margin: 8px 0 12px 1.2em; }
+.prose li + li { margin-top: 6px; }
+.prose .lead { font-size: 19px; margin-bottom: 14px; }
+.prose .updated { margin-top: 32px; color: var(--muted); font-size: 15px; }
+
 /* --- Narrower screens. ---------------------------------------------------- */
 
 @media (max-width: 1080px) {
