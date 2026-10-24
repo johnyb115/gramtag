@@ -253,6 +253,26 @@ h2 { font-weight: 900; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; l
 .keeps .fact { justify-self: end; text-align: right; font-size: 14px; color: var(--muted); }
 .keeps .fact .num { display: block; font-size: 38px; line-height: 1; color: var(--ink); }
 
+/* Questions: each one opens in place, ruled like the lists above. */
+.faq { margin-top: 28px; border-bottom: 1px solid var(--hairline); }
+.faq details { border-top: 1px solid var(--hairline); }
+.faq summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px;
+  padding: 20px 0; font-size: 19px; font-weight: 800; letter-spacing: -.2px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+/* A drawn plus, the same 2 px line as the icons; open, it loses its upright. */
+.faq summary::after {
+  content: ""; flex: none; width: 18px; height: 18px; margin-top: 4px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) center / 18px 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) center / 2px 18px no-repeat;
+}
+.faq details[open] summary::after {
+  background: linear-gradient(var(--ink), var(--ink)) center / 18px 2px no-repeat;
+}
+.faq p { padding: 0 0 22px; font-size: 17px; line-height: 1.55; max-width: 62ch; }
+
 /* Privacy: plain statements under the rule. */
 .promises { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 32px; }
 .promises li { padding: 18px 0; border-top: 1px solid var(--hairline); font-size: 18px; line-height: 1.45; }
