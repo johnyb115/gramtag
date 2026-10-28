@@ -283,6 +283,9 @@ h2 { font-weight: 900; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; l
 .close { padding-bottom: 0; }
 .close h2 { max-width: 14ch; }
 .close .shelf { margin-top: 48px; }
+.close .support { margin-top: 28px; color: var(--muted); max-width: 46em; }
+.close .support a { color: var(--ink); font-weight: 700; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+.close .support svg { width: 20px; height: 20px; }
 
 footer { padding: 32px 0 48px; font-size: 15px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
