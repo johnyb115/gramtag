@@ -27,7 +27,7 @@
 <link rel="manifest" href="/app/manifest.json">
 <link rel="preload" href="/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/archivo-condensedblack.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css?v=29e31c1954">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Gramtag", "url": "https://gramtag.eu/cs/", "description": "Zvažte uvařené jídlo a Gramtag ukáže, kolik gramů patří na který talíř, podle porcí, které dodržujete. Bez účtu, v prohlížeči i na Androidu.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Android, Web", "inLanguage": ["en", "cs"], "image": "https://gramtag.eu/img/og-cs.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "cs", "mainEntity": [{"@type": "Question", "name": "Jak spravedlivě rozdělit uvařené jídlo podle hmotnosti?", "acceptedAnswer": {"@type": "Answer", "text": "Jednou nastavte syrovou porci pro každého. Po uvaření zvažte celý hrnec: Gramtag rozdělí uvařenou hmotnost ve stejném poměru jako syrové porce, takže na každý talíř přijde přesně jeho díl."}}, {"@type": "Question", "name": "Proč uvařené maso váží méně než syrové?", "acceptedAnswer": {"@type": "Answer", "text": "Maso při vaření ztrácí vodu, často kolem čtvrtiny hmotnosti, zatímco rýže a těstoviny vodu nasají. Proto nejde syrové porce z jídelníčku vážit hned po uvaření; Gramtag je přepočítá za vás."}}, {"@type": "Question", "name": "Můžu jídlo vážit v hrnci?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Uložte si jednou prázdnou hmotnost každého hrnce, zapněte „Váženo v nádobě“ a Gramtag hmotnost hrnce odečte."}}, {"@type": "Question", "name": "Sestaví mi Gramtag jídelníček?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Pracuje s porcemi, které už dodržujete, z vlastního plánu nebo od nutričního terapeuta. Nedoporučuje množství ani neposkytuje zdravotní rady."}}, {"@type": "Question", "name": "Existuje verze pro iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Gramtag běží v prohlížeči na gramtag.eu/app, i na iPhonu; přidejte si ho na plochu a otevřete jako aplikaci. Aplikace pro Android je v testování na Google Play."}}, {"@type": "Question", "name": "Kde jsou uložená moje data?", "acceptedAnswer": {"@type": "Answer", "text": "Ve vašem zařízení. Nic se nikam neposílá, dokud se nerozhodnete sdílet mrazák s dalším telefonem."}}]}]</script>
 <script>
   // The visitor's own light/dark choice, if they made one (else the device's).
@@ -46,7 +46,8 @@
         <li><a href="#keeps">Co dalšího umí</a></li>
         <li><a href="#privacy">Soukromí</a></li>
         <li class="keep"><button type="button" class="theme" data-to-dark="Přepnout na tmavý vzhled" data-to-light="Přepnout na světlý vzhled" aria-label="Přepnout na tmavý vzhled"><span class="moon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span><span class="sun"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span></button></li>
-        <li class="keep"><a class="lang" href="/" hreflang="en" lang="en">English</a></li>
+        <li class="keep"><a class="kofi" href="https://ko-fi.com/thoroughrib" rel="noopener" aria-label="Podpořit na Ko-fi"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg><span>Ko-fi</span></a></li>
+        <li class="keep"><a class="lang" href="/" hreflang="en" lang="en" aria-label="English"><span class="long">English</span><span class="short" aria-hidden="true">EN</span></a></li>
       </ul>
     </nav>
   </div>
@@ -181,9 +182,7 @@
         <a class="btn btn-ink" href="/app/">Otevřít Gramtag v prohlížeči</a>
         <a class="btn btn-out" href="/test/">Testovat na Androidu</a>
       </div>
-    </div>
-    <p class="support">Gramtag dělá jeden člověk ve volném čase. Jestli vám pomáhá v kuchyni, můžete poděkovat kafem. <a href="https://ko-fi.com/thoroughrib" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>Podpořit na Ko-fi</a></p>
-    </div>
+    </div></div>
     <div class="shelf"><div class="rail"></div><div class="lip"></div></div>
   </section>
 </main>

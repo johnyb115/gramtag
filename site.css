@@ -104,7 +104,10 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; 
   :root:not([data-theme="light"]) .theme .sun { display: block; }
   :root:not([data-theme="light"]) .theme .moon { display: none; }
 }
+.kofi { display: inline-flex; align-items: center; gap: 6px; }
+.kofi svg { width: 20px; height: 20px; flex: none; }
 .lang { border: 1.5px solid var(--ink); border-radius: 8px; padding: 8px 12px !important; }
+.lang .short { display: none; }
 .lang:hover { background: var(--ink); color: var(--ground); text-decoration: none !important; }
 
 /* --- Buttons: ink, square-shouldered, 56 px main action. ---------------- */
@@ -283,9 +286,6 @@ h2 { font-weight: 900; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; l
 .close { padding-bottom: 0; }
 .close h2 { max-width: 14ch; }
 .close .shelf { margin-top: 48px; }
-.close .support { margin-top: 28px; color: var(--muted); max-width: 46em; }
-.close .support a { color: var(--ink); font-weight: 700; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
-.close .support svg { width: 20px; height: 20px; }
 
 footer { padding: 32px 0 48px; font-size: 15px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
@@ -316,6 +316,10 @@ footer p { color: var(--muted); max-width: 52em; }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .links li:not(.keep) { display: none; }
+  .links { gap: 12px; }
+  .kofi { min-width: 44px; justify-content: center; }
+  .kofi span, .lang .long { display: none; }
+  .lang .short { display: inline; }
   .top .wrap { height: 64px; }
   .brand { font-size: 20px; }
   .ctas .btn { flex: 1 1 100%; }
