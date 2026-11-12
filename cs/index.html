@@ -28,7 +28,7 @@
 <link rel="preload" href="/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/archivo-condensedblack.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/site.css?v=29e31c1954">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Gramtag", "url": "https://gramtag.eu/cs/", "description": "Zvažte uvařené jídlo a Gramtag ukáže, kolik gramů patří na který talíř, podle porcí, které dodržujete. Bez účtu, v prohlížeči i na Androidu.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Android, Web", "inLanguage": ["en", "cs"], "image": "https://gramtag.eu/img/og-cs.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "cs", "mainEntity": [{"@type": "Question", "name": "Jak spravedlivě rozdělit uvařené jídlo podle hmotnosti?", "acceptedAnswer": {"@type": "Answer", "text": "Jednou nastavte syrovou porci pro každého. Po uvaření zvažte celý hrnec: Gramtag rozdělí uvařenou hmotnost ve stejném poměru jako syrové porce, takže na každý talíř přijde přesně jeho díl."}}, {"@type": "Question", "name": "Proč uvařené maso váží méně než syrové?", "acceptedAnswer": {"@type": "Answer", "text": "Maso při vaření ztrácí vodu, často kolem čtvrtiny hmotnosti, zatímco rýže a těstoviny vodu nasají. Proto nejde syrové porce z jídelníčku vážit hned po uvaření; Gramtag je přepočítá za vás."}}, {"@type": "Question", "name": "Můžu jídlo vážit v hrnci?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Uložte si jednou prázdnou hmotnost každého hrnce, zapněte „Váženo v nádobě“ a Gramtag hmotnost hrnce odečte."}}, {"@type": "Question", "name": "Sestaví mi Gramtag jídelníček?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Pracuje s porcemi, které už dodržujete, z vlastního plánu nebo od nutričního terapeuta. Nedoporučuje množství ani neposkytuje zdravotní rady."}}, {"@type": "Question", "name": "Existuje verze pro iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Gramtag běží v prohlížeči na gramtag.eu/app, i na iPhonu; přidejte si ho na plochu a otevřete jako aplikaci. Aplikace pro Android je v testování na Google Play."}}, {"@type": "Question", "name": "Kde jsou uložená moje data?", "acceptedAnswer": {"@type": "Answer", "text": "Ve vašem zařízení. Nic se nikam neposílá, dokud se nerozhodnete sdílet mrazák s dalším telefonem."}}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Gramtag", "url": "https://gramtag.eu/cs/", "description": "Zvažte uvařené jídlo a Gramtag ukáže, kolik gramů patří na který talíř, podle porcí, které dodržujete. Bez účtu, v prohlížeči i na Androidu.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Android, Web", "downloadUrl": "https://play.google.com/store/apps/details?id=com.portionix.app", "inLanguage": ["en", "cs"], "image": "https://gramtag.eu/img/og-cs.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "cs", "mainEntity": [{"@type": "Question", "name": "Jak spravedlivě rozdělit uvařené jídlo podle hmotnosti?", "acceptedAnswer": {"@type": "Answer", "text": "Jednou nastavte syrovou porci pro každého. Po uvaření zvažte celý hrnec: Gramtag rozdělí uvařenou hmotnost ve stejném poměru jako syrové porce, takže na každý talíř přijde přesně jeho díl."}}, {"@type": "Question", "name": "Proč uvařené maso váží méně než syrové?", "acceptedAnswer": {"@type": "Answer", "text": "Maso při vaření ztrácí vodu, často kolem čtvrtiny hmotnosti, zatímco rýže a těstoviny vodu nasají. Proto nejde syrové porce z jídelníčku vážit hned po uvaření; Gramtag je přepočítá za vás."}}, {"@type": "Question", "name": "Můžu jídlo vážit v hrnci?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Uložte si jednou prázdnou hmotnost každého hrnce, zapněte „Váženo v nádobě“ a Gramtag hmotnost hrnce odečte."}}, {"@type": "Question", "name": "Sestaví mi Gramtag jídelníček?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Pracuje s porcemi, které už dodržujete, z vlastního plánu nebo od nutričního terapeuta. Nedoporučuje množství ani neposkytuje zdravotní rady."}}, {"@type": "Question", "name": "Existuje verze pro iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Gramtag běží v prohlížeči na gramtag.eu/app, i na iPhonu; přidejte si ho na plochu a otevřete jako aplikaci. Aplikace pro iPhone se připravuje. Na Androidu si Gramtag stáhněte z Google Play."}}, {"@type": "Question", "name": "Kde jsou uložená moje data?", "acceptedAnswer": {"@type": "Answer", "text": "Ve vašem zařízení. Nic se nikam neposílá, dokud se nerozhodnete sdílet mrazák s dalším telefonem."}}]}]</script>
 <script>
   // The visitor's own light/dark choice, if they made one (else the device's).
   try { const theme = localStorage.getItem("theme"); if (theme) document.documentElement.dataset.theme = theme; } catch (e) {}
@@ -60,8 +60,8 @@
         <h1>Kolik gramů patří na který talíř.</h1>
         <p class="sub">Držíte jídelníček a vaříte jeden hrnec, pro sebe nebo pro dva. Po uvaření jídlo zvažte a Gramtag vytiskne gramy každého na cenovku.</p>
         <div class="ctas">
-        <a class="btn btn-ink" href="/app/">Otevřít Gramtag v prohlížeči</a>
-        <a class="btn btn-out" href="/test/">Testovat na Androidu</a>
+        <a class="btn btn-ink" href="https://play.google.com/store/apps/details?id=com.portionix.app">Stáhnout na Google Play</a>
+        <a class="btn btn-out" href="/app/">Otevřít Gramtag v prohlížeči</a>
       </div>
         <p class="small-print">Bez účtu · česky i anglicky</p>
       </div>
@@ -169,7 +169,7 @@
         <details><summary>Proč uvařené maso váží méně než syrové?</summary><p>Maso při vaření ztrácí vodu, často kolem čtvrtiny hmotnosti, zatímco rýže a těstoviny vodu nasají. Proto nejde syrové porce z jídelníčku vážit hned po uvaření; Gramtag je přepočítá za vás.</p></details>
         <details><summary>Můžu jídlo vážit v hrnci?</summary><p>Ano. Uložte si jednou prázdnou hmotnost každého hrnce, zapněte „Váženo v nádobě“ a Gramtag hmotnost hrnce odečte.</p></details>
         <details><summary>Sestaví mi Gramtag jídelníček?</summary><p>Ne. Pracuje s porcemi, které už dodržujete, z vlastního plánu nebo od nutričního terapeuta. Nedoporučuje množství ani neposkytuje zdravotní rady.</p></details>
-        <details><summary>Existuje verze pro iPhone?</summary><p>Gramtag běží v prohlížeči na gramtag.eu/app, i na iPhonu; přidejte si ho na plochu a otevřete jako aplikaci. Aplikace pro Android je v testování na Google Play.</p></details>
+        <details><summary>Existuje verze pro iPhone?</summary><p>Gramtag běží v prohlížeči na gramtag.eu/app, i na iPhonu; přidejte si ho na plochu a otevřete jako aplikaci. Aplikace pro iPhone se připravuje. Na Androidu si Gramtag stáhněte z Google Play.</p></details>
         <details><summary>Kde jsou uložená moje data?</summary><p>Ve vašem zařízení. Nic se nikam neposílá, dokud se nerozhodnete sdílet mrazák s dalším telefonem.</p></details>
       </div>
     </div></div>
@@ -179,8 +179,8 @@
     <div class="wrap"><div class="ruled">
       <h2>K dnešním talířům stačí jedno vážení.</h2>
       <div class="ctas">
-        <a class="btn btn-ink" href="/app/">Otevřít Gramtag v prohlížeči</a>
-        <a class="btn btn-out" href="/test/">Testovat na Androidu</a>
+        <a class="btn btn-ink" href="https://play.google.com/store/apps/details?id=com.portionix.app">Stáhnout na Google Play</a>
+        <a class="btn btn-out" href="/app/">Otevřít Gramtag v prohlížeči</a>
       </div>
     </div></div>
     <div class="shelf"><div class="rail"></div><div class="lip"></div></div>
